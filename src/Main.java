@@ -6,6 +6,7 @@ public class Main {
         tree.put(3, "Three");
         tree.put(4,"ali");
         tree.put(5,"asi");
+        tree.contains("One", 1);
 
         for (BST.Entry<Integer, String> entry : tree) {
             System.out.println("key is " + entry.getKey() + " and value is " + entry.getValue());

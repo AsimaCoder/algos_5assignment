@@ -84,6 +84,7 @@ public class BST<K extends Comparable<K>, V> implements Iterable<BST.Entry<K, V>
         return node;
     }
 
+
     private Node findMin(Node node) {
         if (node.left == null) {
             return node;
@@ -120,6 +121,7 @@ public class BST<K extends Comparable<K>, V> implements Iterable<BST.Entry<K, V>
         private K key;
         private V value;
 
+
         public Entry(K key, V value) {
             this.key = key;
             this.value = value;
@@ -133,7 +135,15 @@ public class BST<K extends Comparable<K>, V> implements Iterable<BST.Entry<K, V>
             return value;
         }
     }
-
+    public void contains(V value, K key){    System.out.println(cHelper(root, value, key));
+    }public boolean cHelper(Node node, V value, K key){
+        if(node == null){        return false;
+        }    int x = key.compareTo(node.key);
+        if(value == root.val){        return true;
+        } else if(x < 0) {        cHelper(node.left, value, key);
+        } else if (x > 0){        cHelper(node.right, value, key);
+        }    return false;
+    }
 
 }
 
